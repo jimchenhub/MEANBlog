@@ -5,7 +5,12 @@
     <title><%= title %></title>
 </head>
 <body>
-    <img src="img/logo.png" alt="Logo">
     <h1><%= title %></h1>
+
+    <section ng-include="/passage/views/passage.client.view.html"></section>
+
+    <script type="text/javascript" src="/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/passage/passage.client.moduel.js"></script>
+    <script type="text/javascript" src="/application.js"></script>
 </body>
 </html>
