@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="mean">
 <head>
     <meta charset="UTF-8">
     <title><%= title %></title>
@@ -7,10 +7,13 @@
 <body>
     <h1><%= title %></h1>
 
-    <section ng-include="/passage/views/passage.client.view.html"></section>
+    <section ng-view></section>
 
     <script type="text/javascript" src="/lib/angular/angular.min.js"></script>
-    <script type="text/javascript" src="/passage/passage.client.moduel.js"></script>
-    <script type="text/javascript" src="/application.js"></script>
+    <script type="text/javascript" src="/lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/passage/module/passage.client.module.js"></script>
+    <script type="text/javascript" src="/passage/controllers/passage.client.controller.js"></script>
+    <script type="text/javascript" src="/passage/config/passage.client.routes.js"></script>
+    <script type="text/javascript" src="application.js"></script>
 </body>
 </html>
