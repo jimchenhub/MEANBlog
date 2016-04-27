@@ -1,5 +1,5 @@
 angular.module('passage').config(['$routeProvider', function($routeProvider){
-    $routeProvider.when('/', {
+    $routeProvider.when('/passage', {
         templateUrl: '/passage/views/passage.client.view.html'
     }).otherwise({
         redirectTo: '/'

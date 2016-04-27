@@ -1,4 +1,18 @@
-<section ng-controller="PassageController">
-    <input type="text" id="text1" ng-model="name" />
-    <input type="text" id="text2" ng-model="name" />
-</section>
+<link rel="stylesheet" href="/passage/views/css/passage.css">
+
+<div class="background"></div>
+<div ng-controller="PassageController" class="passages-part">
+    <div ng-repeat="passage in passages" class="passages">
+        <div class="title-part">
+            <p class="title">{{passage.title}}</p>
+            <p class="tags">
+                <span ng-repeat="tag in passage.tags" class="tag">
+                    {{tag}}
+                </span>
+            </p>
+            <p class="time">{{passage.date}}</p>
+        </div>
+        <div class="main-part" ng-bind="passage.content">
+        </div>
+    </div>
+</div>

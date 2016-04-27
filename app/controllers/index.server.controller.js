@@ -7,7 +7,7 @@ exports.render = function(req, res){
 
     // render content
     res.render('index', {
-        title: "Hello world"
+        title: "Passages"
     });
 };
 
