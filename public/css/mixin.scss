@@ -1,0 +1,39 @@
+// multi-browser mixin
+@mixin display-flex {
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin display-inline-flex {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+}
+
+@mixin ext-transform($str) {
+    transform: $str;
+    -ms-transform: $str;
+    -moz-transform: $str;
+    -webkit-transform: $str;
+    -o-transform: $str;
+}
+
+// responsive mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media screen and (min-width: 767px) {
+      @content;
+    }
+  }
+ 
+  @else if $breakpoint == "medium" {
+    @media screen and (min-width: 992px) {
+      @content;
+    }
+  }
+ 
+  @else if $breakpoint == "large" {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+}
