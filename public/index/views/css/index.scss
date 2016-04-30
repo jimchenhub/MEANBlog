@@ -1,0 +1,149 @@
+@import "../../../css/mixin";
+
+// keyframes
+@include ext-keyframes(hide-title) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include ext-transform(translate(0, -50px));
+        display: none;
+    }
+}
+
+@include ext-keyframes(show-title) {
+    0% {
+        opacity: 0;
+        @include ext-transform(translate(0, -50px));
+    }
+    100% {
+        opacity: 1;
+        @include ext-transform(translate(0, 0));
+    }
+}
+
+@include ext-keyframes(show-passage) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.index-view {
+    @include display-flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.passage-intro {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px 0;
+    @include display-flex;
+    flex-direction: column;
+
+    // @include ext-box-shadow(0px 3px 10px 1px #e5e5e5);
+    // @include ext-border-radius(3px);
+
+    // background-image: url(/img/passage-bg.jpg);
+    // background-size: 100% auto;
+    // background-repeat: no-repeat;
+
+    .intro {
+        width: 100%;
+        height: 150px;
+        font-size: 24px;
+        // @include display-flex;
+        // flex-direction: column;
+        @include ext-box-shadow(0px 3px 10px 1px #e5e5e5);
+        @include ext-border-radius(3px);
+        // overflow: hidden;
+
+        &:hover {
+            .title{
+                @include ext-animation(hide-title 1s cubic-bezier(.25,.1,.25,1) both);
+            }
+            .passage-content {
+                @include ext-animation(show-passage 0.5s cubic-bezier(.25,.1,.25,1) 0.5s both);
+            }
+        }
+
+        .title {
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            @include display-flex;
+            justify-content: center;
+            align-items: center;
+            @include ext-animation(show-title 1s cubic-bezier(.25,.1,.25,1) forwards);
+        }
+
+        .passage-content {
+            position: relative;
+            top: -150px;
+            width: 30%;
+            height: 100%;
+            opacity: 0;
+            font-size: 16px;
+        }
+
+        p { margin: 0; }
+    }
+
+    .big-number {
+        width: 100%;
+        height: 50px;
+        @include display-flex;
+        justify-content: center;
+        
+        overflow: hidden;
+        font-family: Tahoma;
+        font-size: 4em;
+    }
+
+    @include respond-to(small) {
+        width: 80%;
+
+        .intro {
+            height: 240px;
+            font-size: 32px;
+            @include ext-box-shadow(0px 5px 20px 3px #e5e5e5);
+            @include ext-border-radius(5px);
+
+            .passage-content {
+                font-size: 20px;
+                top: -240px;
+            }
+        }
+        .big-number {
+            width: 100%;
+            height: 80px;
+            font-size: 6em;
+        }
+    }
+
+    @include respond-to(medium) {
+        width: 60%;
+
+        .intro {
+            height: 300px;
+            font-size: 40px;
+
+            .passage-content {
+                font-size: 24px;
+                top: -300px;
+            }
+        }
+
+        .big-number {
+            width: 100%;
+            height: 100px;
+            font-size: 8em;        
+        }
+    }
+}

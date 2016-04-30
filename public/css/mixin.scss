@@ -1,21 +1,63 @@
 // multi-browser mixin
 @mixin display-flex {
-    display: -webkit-flex;
-    display: flex;
+  display: -webkit-flex;
+  display: flex;
 }
 
 @mixin display-inline-flex {
-    display: -webkit-inline-flex;
-    display: inline-flex;
+  display: -webkit-inline-flex;
+  display: inline-flex;
 }
 
 @mixin ext-transform($str) {
-    transform: $str;
-    -ms-transform: $str;
-    -moz-transform: $str;
-    -webkit-transform: $str;
-    -o-transform: $str;
+  transform: $str;
+  -ms-transform: $str;
+  -moz-transform: $str;
+  -webkit-transform: $str;
+  -o-transform: $str;
 }
+
+@mixin ext-transition($str) {
+  transition: $str;
+  -moz-transition: $str;
+  -webkit-transition: $str;
+  -o-transition: $str;
+}
+
+@mixin ext-box-shadow($str) {
+  box-shadow: $str; 
+  -moz-box-shadow: $str; 
+  -webkit-box-shadow: $str; 
+}
+
+@mixin ext-border-radius($num) {
+  border-radius: $num;
+  -ms-border-radius: $num;
+  -moz-border-radius: $num;
+  -webkit-border-radius: $num;
+  -o-border-radius: $num;
+}
+
+@mixin ext-keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin ext-animation($str) {
+  animation: $str;
+  -webkit-animation: $str;
+}
+
 
 // responsive mixin
 @mixin respond-to($breakpoint) {

@@ -1,4 +1,4 @@
-angular.module('passage').controller('PassageController', ['$scope', 
+angular.module('index').controller('IndexController', ['$scope', 
     function($scope){
         $scope.passages=[
         {

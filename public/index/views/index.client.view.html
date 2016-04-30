@@ -1,2 +1,18 @@
 <link rel="stylesheet" href="/index/views/css/index.css">
 
+<section class="index-view" ng-controller="IndexController">
+    <div class="passage-intro">
+        <div class="big-number">01</div>
+        <div class="intro">
+            <span class="title">Passages</span>
+            <div class="passage-content">
+                <ul>
+                    <li ng-repeat="passage in passages">
+                        <p ng-bind="passage.title"></p>
+                        <p ng-bind="passage.content"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
