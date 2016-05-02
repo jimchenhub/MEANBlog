@@ -1,4 +1,5 @@
 @import "mixin";
+@import "variables";
 
 header {
     position: relative;
@@ -8,7 +9,8 @@ header {
     height: 70px;
     @include display-flex;
     flex-direction: row;
-    background-color: #fff;
+    background-color: transparent;
+    font-family: Roboto, Microsoft YaHei;
     
     .logo {
         padding-left: 10px;
@@ -29,8 +31,8 @@ header {
         }
         .inner-round { 
             @include ext-transform(rotate(0deg) scale(0.44, 0.44));
-            background-color: #fff;
             box-shadow: 2px 1px 1px 0 #e5e5e5;
+            background: #fff;
         }
     }
 
