@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/passage/views/css/passage.css">
+
+<div ng-controller="PassageController" class="passages-part" ng-init="find()">
+    <ul class="passages">
+        <li ng-repeat="passage in passages">
+            <div class="title-part">
+                <p>{{passage._id}}</p>
+                <a class="title" data-ng-href="#!/passages/{{passage._id}}">{{passage.title}}</a>
+                <p class="tags">
+                    <span ng-repeat="tag in passage.tags" class="tag">
+                        {{tag}}
+                    </span>
+                </p>
+                <p class="time">{{passage.date}}</p>
+            </div>
+            <div class="main-part" ng-bind="passage.content">
+            </div>
+        </li>
+    </div>
+</div>

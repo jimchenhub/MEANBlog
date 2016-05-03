@@ -1,0 +1,12 @@
+<div ng-controller="PassageController" class="passages-part" ng-init="findOne()">
+    <div class="title-part">
+        <p class="title">{{passage.title}}</p>
+        <p class="tags">
+            <span ng-repeat="tag in passage.tags" class="tag">
+                {{tag}}
+            </span>
+        </p>
+        <p class="time">{{passage.date}}</p>
+    </div>
+    <div class="main-part" ng-bind="passage.content"></div>
+</div>
